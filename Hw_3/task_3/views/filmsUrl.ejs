@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%= title %></title>
+        <link rel="stylesheet" href="/stylesheets/style.css" />
+    </head>
+    <body>
+        <main class="home">
+            <div class="container">
+                <h1><%= title %></h1>
+                <ul>
+                    <% for (let site of urls) { %>
+                    <li>
+                        <a href="<%= site %>" target="_blank"><%= site %></a>
+                    </li>
+                    <% } %>
+                </ul>
+            </div>
+        </main>
+    </body>
+</html>

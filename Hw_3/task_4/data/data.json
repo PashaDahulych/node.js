@@ -1,0 +1,12 @@
+[
+    {
+        "prodName": "Apple",
+        "prodCount": 20,
+        "prodPrice": 5
+    },
+    {
+        "prodName": "Phone",
+        "prodCount": 10,
+        "prodPrice": 20000
+    }
+]

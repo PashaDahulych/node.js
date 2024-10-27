@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Products list</title>
+        <link rel="stylesheet" href="/stylesheets/style.css" />
+    </head>
+    <body>
+        <main class="home">
+            <div class="container">
+                <nav>
+                    <a class="button" href="about.html">About</a>
+                    <a class="button" href="/products/add">Add products</a>
+                </nav>
+
+                <% if(products.length) {%>
+                <h1>Таблиця з товарами</h1>
+                <table>
+                    <tr>
+                        <th>Назва</th>
+                        <th>Кількість одиниць</th>
+                        <th>Ціна</th>
+                    </tr>
+
+                    <% for(prod of products) {%>
+                    <tr>
+                        <td><%=prod.prodName %></td>
+                        <td><%=prod.prodCount %></td>
+                        <td><%=prod.prodPrice %></td>
+                    </tr>
+                    <%}%>
+                </table>
+                <ul>
+                    <% for(prod of products) {%>
+                    <li>
+                        <%= prod.prodName %> - ціна за одиницю товару: <%=
+                        prod.prodPrice %>
+                    </li>
+                    <%}%>
+                </ul>
+                <%} else {%>
+                <h1>Список товарів пустий =(</h1>
+                <%}%>
+            </div>
+        </main>
+    </body>
+</html>

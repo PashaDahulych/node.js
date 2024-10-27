@@ -1,0 +1,117 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+}
+li {
+    list-style: none;
+}
+a {
+    color: inherit;
+}
+a:link,
+a:visited {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+img {
+    vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: inherit;
+    font-size: inherit;
+}
+input,
+button,
+textarea {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+}
+button {
+    cursor: pointer;
+    color: inherit;
+    background-color: inherit;
+}
+input {
+    width: 100%;
+}
+html,
+body {
+    height: 100%;
+}
+body {
+    line-height: 1;
+}
+
+body {
+    font: 1rem "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+h1 {
+    font-size: 1.625rem;
+}
+a{
+  transition: all 0.3s ease 0s;
+}
+a:hover{
+  color: blue;
+}
+
+.container {
+    max-width: 89.375rem;
+    margin: 0 auto;
+    padding-inline: 0.9375rem;
+}
+/* about */
+
+.home,
+.about,
+.news {
+    padding-block: 0.9375rem;
+}
+.about *:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+.about__img img {
+    max-width: 100%;
+}
+
+/* news */
+
+.news__gallery {
+    display: flex;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+}
+.news__gallery:not(:last-child) {
+    margin-bottom: 1.25rem;
+}
+.news__img {
+    position: relative;
+    padding-bottom: 50%;
+    flex: 0 1 calc(50% - 20px);
+}
+.news__img img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+}
+.news h1:not(:last-child),
+.news p:not(:last-child) {
+    margin-bottom: 1.25rem;
+}

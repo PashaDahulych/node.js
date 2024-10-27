@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%= title %></title>
+        <link rel="stylesheet" href="/stylesheets/style.css" />
+    </head>
+    <body>
+        <main class="home">
+            <div class="container">
+                <h1>Характеристика товару</h1>
+                <form action="#" method="POST">
+                    <div class="form__body">
+                        <label>
+                            Назва
+                            <input type="text" name="prodName" />
+                        </label>
+                        <label>
+                            Кількість
+                            <input type="number" name="prodCount" />
+                        </label>
+                        <label>
+                            Ціна
+                            <input type="number" name="prodPrice" />
+                        </label>
+                    </div>
+
+                    <button type="submit" class="button">Відправити</button>
+                </form>
+                <nav>
+                    <a class="button" href="about.html">About</a>
+                    <a class="button" href="/products">Products</a>
+                </nav>
+            </div>
+        </main>
+    </body>
+</html>
