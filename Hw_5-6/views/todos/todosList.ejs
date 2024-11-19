@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Список задач</title>
+        <link rel="stylesheet" href="/stylesheets/style.css" />
+        <script src="/javascripts/onDeleteTodo.js"></script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <%- include('../sections/header', { }) %>
+            <main>
+                <section class="main__container">
+                    <h1>Сторінка списку задач</h1>
+                    <% if (todos && todos.length > 0) { %>
+                    <ul>
+                        <% for (const todo of todos) { %>
+                        <li>
+                            <a href="/todos/<%= todo.id %>"
+                                ><%= todo.title %></a
+                            >
+                            <span>Приорітет: <%= todo.priority %></span>
+                            <span
+                                >Кількість днів для виконання: <%= todo.timeTodo
+                                %></span
+                            >
+                            <a href="/todos/edit/<%= todo.id %>">Оновити</a>
+                            <button
+                                onClick="onDeleteTodo('<%= todo.id %>')"
+                                type="button"
+                            >
+                                Видалити
+                            </button>
+                        </li>
+                        <% } %>
+                    </ul>
+                    <% } else { %>
+                    <P>Список задач пустий</P>
+                    <% } %>
+                    <a href="/todos/create">Стоврити задачу</a>
+                </section>
+            </main>
+            <%- include('../sections/footer', {}) %>
+        </div>
+    </body>
+</html>

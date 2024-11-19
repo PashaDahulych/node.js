@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%= title %></title>
+        <link rel="stylesheet" href="/stylesheets/style.css" />
+    </head>
+    <body>
+        <div class="wrapper">
+            <%- include('sections/header', { title: 'Todo form' }) %>
+            <main>
+                <section class="main__container">
+                    <h1>Todo менеджер на мінімалках =)</h1>
+                    <p>
+                        Вітаю!!! Дякую, що будете юзати мій Todo менеджер на
+                        мінімалках!!!
+                    </p>
+                    <a href="/todos">Перейти до менеджера</a>
+                </section>
+            </main>
+            <%- include('sections/footer', {}) %>
+        </div>
+    </body>
+</html>

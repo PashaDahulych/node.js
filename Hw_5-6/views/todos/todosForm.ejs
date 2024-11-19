@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Форма для створення задачі</title>
+        <link rel="stylesheet" href="/stylesheets/style.css" />
+        <script src="/javascripts/RequestManager.js"></script>
+        <script>
+            function onInputFile(event) {
+                RequestManager.handleFileSelect(event, "#imgPreview")
+            }
+        </script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <%- include('../sections/header', { }) %>
+            <main>
+                <section class="form__container">
+                    <h1>
+                        <%= todo.id ? 'Форма редагування задачі' : 'Форма стоврення задачі' %>
+                    </h1>
+                    <% if (errors?.length > 0) { %>
+                    <ul>
+                        <% for (const error of errors) { %>
+                        <li><%= error.msg %></li>
+                        <% } %>
+                    </ul>
+                    <% } %>
+                    <!--  action="<%= todo.id ? '/todos/edit/' + todo.id + '?_method=PUT' : '/todos' %>" -->
+                    <!--  -->
+                    <form
+                        action="<%= todo.id ? '/todos/edit/' + todo.id + '?_method=PUT' : '/todos' %>"
+                        enctype="multipart/form-data"
+                        method="POST"
+                        class="form"
+                    >
+                        <div class="form__line">
+                            <label for="title">Назва</label>
+                            <input
+                                id="title"
+                                autocomplete="off"
+                                type="text"
+                                name="title"
+                                value="<%= todo ? todo.title : '' %>"
+                            />
+                        </div>
+                        <div class="form__line">
+                            <label for="email">Мейл</label>
+                            <input
+                                id="email"
+                                autocomplete="off"
+                                type="email"
+                                name="email"
+                                value="<%= todo ? todo.email : '' %>"
+                            />
+                        </div>
+                        <div class="form__line">
+                            <label for="password">Пароль</label>
+                            <input
+                                id="password"
+                                autocomplete="off"
+                                type="password"
+                                name="password"
+                                value="<%= todo ? todo.password : '' %>"
+                            />
+                        </div>
+                        <div class="form__line">
+                            <label for="priority">Приорітетність</label>
+                            <input
+                                id="priority"
+                                autocomplete="off"
+                                type="number"
+                                name="priority"
+                                value="<%= todo ? todo.priority : '' %>"
+                            />
+                        </div>
+                        <div class="form__line">
+                            <label for="timeTodo">Час виконання (дні)</label>
+                            <input
+                                id="timeTodo"
+                                autocomplete="off"
+                                type="number"
+                                name="timeTodo"
+                                value="<%= todo ? todo.timeTodo : '' %>"
+                            />
+                        </div>
+                        <div class="form__file">
+                            <label for="usFile">Оберіть фото </label>
+                            <input
+                                type="file"
+                                id="usFile"
+                                name="todoImage"
+                                accept="image*/"
+                                onchange="onInputFile(event)"
+                            />
+                            <img
+                                class="form__img"
+                                id="imgPreview"
+                                src="<%= todo.imgSrc ? '/uploads/' + todo.imgSrc : '/photo-not-available.jpg' %>"
+                                alt="todo image"
+                            />
+                        </div>
+                        <button type="submit" class="button">
+                            <%= todo.id ? 'Оновити' : 'Стоврити' %>
+                        </button>
+                    </form>
+                </section>
+            </main>
+            <%- include('../sections/footer', {}) %>
+        </div>
+    </body>
+</html>

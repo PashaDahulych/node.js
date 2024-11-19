@@ -1,0 +1,166 @@
+/* === Reset === */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+}
+li {
+    list-style: none;
+}
+a {
+    color: inherit;
+}
+a:link,
+a:visited {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+img {
+    vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: inherit;
+    font-size: inherit;
+}
+input,
+button,
+textarea {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+}
+button {
+    cursor: pointer;
+    color: inherit;
+    background-color: inherit;
+}
+input {
+    width: 100%;
+}
+html,
+body {
+    height: 100%;
+}
+body {
+    line-height: 1;
+}
+/* ============= */
+
+body {
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+[class*="__container"] {
+    max-width: 1430px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+.wrapper > main {
+    flex-grow: 1;
+}
+
+.form__img {
+    width: 40px;
+    height: 40px;
+}
+
+main {
+    padding-top: 20px;
+}
+a, button {
+    display: inline-block;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+    border-radius: 4px;
+}
+a:hover,
+button:hover {
+    background-color: silver;
+  }
+
+/* === Header === */
+
+.header {
+    padding-block: 15px;
+    box-shadow: 0px 4px 4px silver;
+}
+.header__container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    justify-content: space-between;
+}
+.header__menu {
+}
+
+.menu {
+}
+.menu__body {
+}
+.menu__list {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+.menu__item {
+}
+.menu__link {
+    display: inline-flex;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, 0.3s ease;
+}
+.menu__link:hover {
+    background-color: silver;
+}
+
+/* === Header End === */
+
+.form {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px 30px;
+}
+
+.form__line,
+.form__file{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+.form__line input {
+  outline: 1px solid transparent;
+  border: 1px solid black;
+  border-radius: 4px;
+  transition: box-shadow 0.3s ease 0s;
+  padding: 10px 15px;
+}
+.form__line input:hover,
+.form__line input:focus {
+  box-shadow: 0px 5px 5px silver;
+}
+
+/* === Footer === */
+.footer {
+    min-height: 40px;
+    border-top: 1px solid silver;
+    padding-block: 20px;
+}
+.footer__container {
+}
+/* === Footer End === */

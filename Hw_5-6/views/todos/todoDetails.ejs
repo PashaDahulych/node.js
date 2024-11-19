@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Деталі задачі</title>
+        <link rel="stylesheet" href="/stylesheets/style.css" />
+    </head>
+    <body>
+        <div class="wrapper">
+            <%- include('../sections/header', { }) %>
+            <main>
+                <section class="detail__container">
+                    <h1>Сторінка деталей задачі</h1>
+                    <h2><%= todo.title %></h2>
+                    <div>Приорітетність задачі: <%= todo.priority %></div>
+                    <div>
+                        Термін викоання задачі (в днях):<%= todo.timeTodo %>
+                    </div>
+                    <a href="/todos">Сторінка з всіма задачами</a>
+                </section>
+            </main>
+            <%- include('../sections/footer', {}) %>
+        </div>
+    </body>
+</html>
